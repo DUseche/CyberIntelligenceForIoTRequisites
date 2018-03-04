@@ -11,7 +11,7 @@ make install
 cd ..
 add-apt-repository ppa:oisf/suricata-stable
 apt-get update
-apt-get install suricata 
+apt-get install -y suricata 
 mkdir /var/log/suricata
 mkdir /etc/suricata
 cd ..

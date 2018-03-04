@@ -10,10 +10,15 @@ cd ..
 chmod 777 -R CyberIntelligenceForIoTRequisites
 cd CyberIntelligenceForIoTRequisites
 wget https://github.com/VirusTotal/yara/archive/v3.7.1.zip
-unzip yara-3.7.1.zip
+unzip v3.7.1.zip
 chmod 777 -R yara-3.7.1
 rm yara-3.7.1/Makefile.am yara-3.7.1/libyara/Makefile.am yara-3.7.1/configure.ac yara-3.7.1/libyara/modules/module_list
-cp YaraFiles/Makefile.am yara-3.7.1 YaraFiles/configure.ac yara-3.7.1 Yarafiles/libyara/Makefile.am yara-3.7.1/libyara/Makefile.am YaraFiles/libyara/modules/module_list yara-3.7.1/libyara/modules/ YaraFiles/libyara/modules/r2.c yara-3.7.1/libyara/modules/
+cp YaraFiles/Makefile.am yara-3.7.1 
+cp YaraFiles/configure.ac yara-3.7.1 
+cp YaraFiles/libyara/Makefile.am yara-3.7.1/libyara/Makefile.am 
+cp YaraFiles/libyara/modules/module_list yara-3.7.1/libyara/modules/ 
+cp YaraFiles/libyara/modules/r2.c yara-3.7.1/libyara/modules/
+cd yara-3.7.1
 ./bootstrap.sh
 ./configure --enable-cuckoo
 make

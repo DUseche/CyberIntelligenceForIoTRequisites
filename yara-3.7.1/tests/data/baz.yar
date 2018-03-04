@@ -1,1 +1,0 @@
-rule baz { condition: true }

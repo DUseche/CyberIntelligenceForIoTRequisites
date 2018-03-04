@@ -1,3 +1,5 @@
+#!/bin/sh
+
 apt-get update && apt-get upgrade -y
 apt-get install -y automake libtool make gcc libssl-dev libjansson-dev python3 python3-pip ethtool
 cd radare2

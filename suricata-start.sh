@@ -1,3 +1,5 @@
+#!/bin/sh
+
 ethtool -K enp0s3 tso off
 ethtool -K enp0s3 gro off
 ethtool -K enp0s3 lro off

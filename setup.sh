@@ -7,7 +7,13 @@ git clone https://github.com/radare/radare2
 cd radare2
 sys/install.sh
 cd ..
-cd CyberIntelligenceForIoTRequisites/yara-3.7.1
+chmod 777 -R CyberIntelligenceForIoTRequisites
+cd CyberIntelligenceForIoTRequisites
+wget https://github.com/VirusTotal/yara/archive/v3.7.1.zip
+unzip yara-3.7.1.zip
+chmod 777 -R yara-3.7.1
+rm yara-3.7.1/Makefile.am yara-3.7.1/libyara/Makefile.am yara-3.7.1/configure.ac yara-3.7.1/libyara/modules/module_list
+cp YaraFiles/Makefile.am yara-3.7.1 YaraFiles/configure.ac yara-3.7.1 Yarafiles/libyara/Makefile.am yara-3.7.1/libyara/Makefile.am YaraFiles/libyara/modules/module_list yara-3.7.1/libyara/modules/ YaraFiles/libyara/modules/r2.c yara-3.7.1/libyara/modules/
 ./bootstrap.sh
 ./configure --enable-cuckoo
 make

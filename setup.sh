@@ -7,7 +7,7 @@ git clone https://github.com/radare/radare2
 cd radare2
 sys/install.sh
 cd ..
-cd CyberIntelligenceForIoTRequisites/yara
+cd CyberIntelligenceForIoTRequisites/yara-3.7.1
 ./bootstrap.sh
 ./configure --enable-cuckoo
 make

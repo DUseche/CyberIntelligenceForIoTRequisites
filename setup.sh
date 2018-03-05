@@ -29,6 +29,10 @@ apt-get update
 apt-get install -y suricata 
 mkdir /var/log/suricata
 mkdir /etc/suricata
+rm /etc/suricata/suricata.yaml
+cp suricata.yaml /etc/suricata
+cp file-extraction.rules /etc/suricata/rules
 cd ..
 git clone https://gitlab.com/Useche/PGRCyberintelligence
+chmod 777 -R PGRCyberintelligence
 pip3 install pymisp

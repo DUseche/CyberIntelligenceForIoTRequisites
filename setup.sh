@@ -1,12 +1,16 @@
 #!/bin/sh
 
+#Update and upgrade
 apt-get update && apt-get upgrade -y
-apt-get install -y automake libtool make gcc libssl-dev libjansson-dev python3 python3-pip ethtool unzip
+#Dependencies install
+apt-get install -y automake libtool make gcc libssl-dev libjansson-dev python3 python3-pip ethtool unzip sqlite3 software-properties-common
+#Radare2
 cd  ..
 git clone https://github.com/radare/radare2
 cd radare2
 sys/install.sh
 cd ..
+#Yara
 chmod 777 -R CyberIntelligenceForIoTRequisites
 cd CyberIntelligenceForIoTRequisites
 wget https://github.com/VirusTotal/yara/archive/v3.7.1.zip
@@ -23,16 +27,29 @@ cd yara-3.7.1
 ./configure --enable-cuckoo
 make
 make install
+#Suricata
 cd ..
-add-apt-repository ppa:oisf/suricata-stable
+add-apt-repository -y ppa:oisf/suricata-stable
 apt-get update
 apt-get install -y suricata 
-mkdir /var/log/suricata
-mkdir /etc/suricata
+#mkdir /var/log/suricata
+#mkdir /etc/suricata
 rm /etc/suricata/suricata.yaml
 cp suricata.yaml /etc/suricata
 cp file-extraction.rules /etc/suricata/rules
+#Sentinel
 cd ..
 git clone https://gitlab.com/Useche/PGRCyberintelligence
 chmod 777 -R PGRCyberintelligence
 pip3 install pymisp
+#Openvas host: localhost:443
+sudo apt update && sudo apt upgrade -y
+sudo add-apt-repository -y ppa:mrazavi/openvas
+sudo apt update
+sudo apt install openvas -y
+openvas-nvt-sync
+openvas-scapdata-sync
+openvas-certdata-sync
+service openvas-scanner restart
+service openvas-manager restart
+openvasmd --rebuild --progress

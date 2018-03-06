@@ -43,10 +43,10 @@ git clone https://gitlab.com/Useche/PGRCyberintelligence
 chmod 777 -R PGRCyberintelligence
 pip3 install pymisp
 #Openvas host: localhost:443
-sudo apt update && sudo apt upgrade -y
-sudo add-apt-repository -y ppa:mrazavi/openvas
-sudo apt update
-sudo apt install openvas -y
+apt update && sudo apt upgrade -y
+add-apt-repository -y ppa:mrazavi/openvas
+apt update
+apt install openvas -y
 openvas-nvt-sync
 openvas-scapdata-sync
 openvas-certdata-sync

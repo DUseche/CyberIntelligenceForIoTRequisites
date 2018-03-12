@@ -407,10 +407,10 @@ outputs:
 
   # a line based alerts log similar to fast.log into syslog
   - syslog:
-      enabled: no
+      enabled: yes
       # reported identity to syslog. If ommited the program name (usually
       # suricata) will be used.
-      #identity: "suricata"
+      identity: "IoT-sentinel"
       facility: local5
       #level: Info ## possible levels: Emergency, Alert, Critical,
                    ## Error, Warning, Notice, Info, Debug
@@ -434,7 +434,7 @@ outputs:
   # - rules that contain the "filestore" keyword.
   - file-store:
       enabled: yes       # set to yes to enable
-      log-dir: /home/$USER/PGRCyberintelligence/Centinela/objects    # directory to store the files
+      log-dir: /home/sentinel/PGRCyberintelligence/Centinela/objects    # directory to store the files
       force-magic: yes   # force logging magic on all stored files
       # force logging of checksums, available hash functions are md5,
       # sha1 and sha256

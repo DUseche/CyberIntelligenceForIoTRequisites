@@ -32,8 +32,8 @@ cd ..
 add-apt-repository -y ppa:oisf/suricata-stable
 apt-get update
 apt-get install -y suricata 
-#mkdir /var/log/suricata
-#mkdir /etc/suricata
+mkdir /var/log/suricata
+mkdir /etc/suricata
 rm /etc/suricata/suricata.yaml
 rm /etc/rsyslog.conf
 cp rsyslog.conf /etc
@@ -48,13 +48,13 @@ pip3 install pymisp
 apt update && sudo apt upgrade -y
 add-apt-repository -y ppa:mrazavi/openvas
 apt update
-apt install openvas -y
-openvas-nvt-sync
-openvas-scapdata-sync
-openvas-certdata-sync
-service openvas-scanner restart
-service openvas-manager restart
-openvasmd --rebuild --progress
+#apt install openvas -y
+#openvas-nvt-sync
+#openvas-scapdata-sync
+#openvas-certdata-sync
+#service openvas-scanner restart
+#service openvas-manager restart
+#openvasmd --rebuild --progress
 #Kismet
 apt-get update
 apt-get install -y kismet

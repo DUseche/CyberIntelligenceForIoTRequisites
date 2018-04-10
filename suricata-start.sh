@@ -1,7 +1,6 @@
 #!/bin/sh
 
 INTERFACE=$1
-wc $INTERFACE
 
 ethtool -K $INTERFACE tso off
 ethtool -K $INTERFACE gro off

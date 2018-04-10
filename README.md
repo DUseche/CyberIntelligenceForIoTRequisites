@@ -7,6 +7,8 @@ The requisites of executing these scripts are:
 - The operating system must be [Ubuntu 16.04 TLS](https://www.ubuntu.com/download/desktop) for desktop and [Ubuntu Mate 16.04 TLS](https://ubuntu-mate.org/download/) for Raspberry pi 3
 - The username must be "sentinel"
 - You need sudo privileges
+- Your Ethernet net card must allow promiscous mode
+- Your Wifi net card must allow monitor mode
 
 Before running the installing script be sure you changed the ip in the line "\*.local5@10.10.3.198:514" in the file rsyslog.conf to the ip of your OSSIM instance.
 

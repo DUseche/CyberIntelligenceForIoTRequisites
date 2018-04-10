@@ -1,13 +1,16 @@
 #!/bin/sh
 
-ethtool -K enp0s3 tso off
-ethtool -K enp0s3 gro off
-ethtool -K enp0s3 lro off
-ethtool -K enp0s3 gso off
-ethtool -K enp0s3 rx off
-ethtool -K enp0s3 tx off
-ethtool -K enp0s3 sg off
-ethtool -K enp0s3 rxvlan off
-ethtool -K enp0s3 txvlan off
+INTERFACE=$1
+wc $INTERFACE
 
-suricata -c /etc/suricata/suricata.yaml -i enp0s3 --init-errors-fatal
+ethtool -K $INTERFACE tso off
+ethtool -K $INTERFACE gro off
+ethtool -K $INTERFACE lro off
+ethtool -K $INTERFACE gso off
+ethtool -K $INTERFACE rx off
+ethtool -K $INTERFACE tx off
+ethtool -K $INTERFACE sg off
+ethtool -K $INTERFACE rxvlan off
+ethtool -K $INTERFACE txvlan off
+
+suricata -c /etc/suricata/suricata.yaml -i $INTERFACE --init-errors-fatal
